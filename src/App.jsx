@@ -314,7 +314,7 @@ function ProductFormPage() {
         </div>
         <div className="form-section-title second-section"><span>02</span><div><h2>Pricing & inventory</h2><p>Set the selling price and available quantity.</p></div></div>
         <div className="form-grid">
-          <label className="form-field"><span>Price (KES) *</span><div className="price-input"><span>KSh</span><input name="price" type="number" min="1" step="1" value={form.price} onChange={updateField} placeholder="850" required /></div></label>
+          <label className="form-field"><span>Price (KES) *</span><div className="price-input"><span>KSh</span><input name="price" aria-label="Price (KES) *" type="number" min="1" step="1" value={form.price} onChange={updateField} placeholder="850" required /></div></label>
           <label className="form-field"><span>Stock quantity *</span><input name="stock" type="number" min="0" step="1" value={form.stock} onChange={updateField} placeholder="20" required /></label>
           <label className="form-field"><span>Product label</span><select name="badge" value={form.badge} onChange={updateField}><option value="">No label</option><option>Bestseller</option><option>Popular</option><option>New arrival</option><option>Limited stock</option></select></label>
           <label className="form-field"><span>Card accent</span><select name="accent" value={form.accent} onChange={updateField}><option value="cream">Cream</option><option value="brown">Coffee brown</option><option value="orange">Sunrise</option><option value="sage">Sage green</option></select></label>
