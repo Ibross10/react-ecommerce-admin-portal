@@ -1,0 +1,57 @@
+{
+  "store_info": [
+    {
+      "id": 1,
+      "name": "Coffee R Us",
+      "description": "The go-to store for your coffee needs.",
+      "phone_number": "+254 700 123 456",
+      "currency": "KES"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Vanilla Bean",
+      "description": "A smooth medium roast with a nutty aroma and gentle vanilla finish.",
+      "origin": "Colombia",
+      "category": "Whole Bean",
+      "price": 850,
+      "stock": 24,
+      "badge": "Bestseller",
+      "accent": "cream"
+    },
+    {
+      "id": 2,
+      "name": "House Blend",
+      "description": "A full-bodied dark roast with a rich flavour and a satisfying finish.",
+      "origin": "Vietnam",
+      "category": "Ground Coffee",
+      "price": 950,
+      "stock": 18,
+      "badge": "Popular",
+      "accent": "brown"
+    },
+    {
+      "id": 3,
+      "name": "Ethiopian Sunrise",
+      "description": "A bright light roast with delicate citrus notes and a floral aroma.",
+      "origin": "Ethiopia",
+      "category": "Whole Bean",
+      "price": 1100,
+      "stock": 12,
+      "badge": "New arrival",
+      "accent": "orange"
+    },
+    {
+      "id": 4,
+      "name": "Cold Brew Pack",
+      "description": "A convenient medium-roast pack crafted for a refreshing cold brew.",
+      "origin": "Kenya",
+      "category": "Coffee Packs",
+      "price": 750,
+      "stock": 7,
+      "badge": "Limited stock",
+      "accent": "sage"
+    }
+  ]
+}
