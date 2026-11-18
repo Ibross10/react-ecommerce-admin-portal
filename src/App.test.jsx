@@ -136,7 +136,7 @@ describe("administrator product management", () => {
     await user.type(await screen.findByLabelText("Product name *"), "Moringa House Blend");
     await user.type(screen.getByLabelText("Description *"), "A balanced medium roast made for everyday coffee.");
     await user.type(screen.getByLabelText("Origin *"), "Kenya");
-    await user.type(screen.getByLabelText("Price (KES) *"), "1250");
+    await user.type(screen.getByRole("spinbutton", { name: "Price (KES) *" }), "1250");
     await user.type(screen.getByLabelText("Stock quantity *"), "15");
     await user.click(screen.getByRole("button", { name: "Add product" }));
 
