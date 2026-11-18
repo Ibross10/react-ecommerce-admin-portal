@@ -168,7 +168,7 @@ function PageHeading({ eyebrow, title, description, action }) {
   return <div className="page-heading"><div><span className="section-eyebrow">{eyebrow}</span><h1>{title}</h1>{description && <p>{description}</p>}</div>{action && <div>{action}</div>}</div>;
 }
 
-function ProductCard({ product, onDelete }) {
+function ProductCard({ product, onDelete, showActions = true }) {
   return (
     <article className="admin-product-card">
       <div className={`admin-product-art ${product.accent || "cream"}`}><span>COFFEE R US</span><b>☕</b></div>
@@ -177,7 +177,7 @@ function ProductCard({ product, onDelete }) {
         <h2><Link to={`/admin/products/${product.id}`}>{product.name}</Link></h2>
         <p className="admin-origin">{product.origin} · {product.stock} in stock</p>
         <p className="admin-description">{product.description}</p>
-        <div className="admin-card-bottom"><strong>{formatPrice(product.price)}</strong><div><Link to={`/admin/products/${product.id}/edit`} aria-label={`Edit ${product.name}`}>Edit</Link><button type="button" onClick={() => onDelete(product)} aria-label={`Delete ${product.name}`}>Delete</button></div></div>
+        <div className="admin-card-bottom"><strong>{formatPrice(product.price)}</strong>{showActions && <div><Link to={`/admin/products/${product.id}/edit`} aria-label={`Edit ${product.name}`}>Edit</Link><button type="button" onClick={() => onDelete?.(product)} aria-label={`Delete ${product.name}`}>Delete</button></div>}</div>
       </div>
     </article>
   );
@@ -201,7 +201,7 @@ function AdminOverview() {
         <article className="stat-card"><span>Low-stock items</span><strong>{loading ? "—" : stats.low}</strong><small>10 units or fewer</small></article>
       </section>
       <div className="section-row"><div><span className="section-eyebrow">RECENTLY ADDED</span><h2>Latest products</h2></div><Link to="/admin/products">View all products →</Link></div>
-      {loading ? <div className="empty-state">Loading products…</div> : products.length ? <div className="admin-product-grid compact-grid">{products.slice(0, 3).map((product) => <ProductCard key={product.id} product={product} onDelete={() => {}} />)}</div> : <div className="empty-state"><h2>Your catalogue is waiting</h2><p>Add your first product to get started.</p><Link to="/admin/products/new" className="button primary-button">Add first product</Link></div>}
+      {loading ? <div className="empty-state">Loading products…</div> : products.length ? <div className="admin-product-grid compact-grid">{products.slice(0, 3).map((product) => <ProductCard key={product.id} product={product} showActions={false} />)}</div> : <div className="empty-state"><h2>Your catalogue is waiting</h2><p>Add your first product to get started.</p><Link to="/admin/products/new" className="button primary-button">Add first product</Link></div>}
     </>
   );
 }
